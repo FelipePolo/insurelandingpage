@@ -1,9 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {Container} from 'reactstrap';
+import Navbartop from './components/navbartop';
+import './app.scss';
+import ContenIntro from './components/contentintro';
+
 
 function App(){
   return(
-    <p>hola mundo</p>
+    <Container fluid = {"true"}>
+      <Navbartop></Navbartop>
+      <ContenIntro></ContenIntro>
+    </Container>
   );
 }
 ////////////////////////////////////////////
