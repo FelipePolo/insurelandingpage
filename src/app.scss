@@ -15,6 +15,18 @@
   --fontBody:'Karla';
   font-size: 16px;
 }
+//mixins
+@mixin title {
+  font-family: var(--fontHead);
+  font-weight: 700;
+  font-size: 2.8em;
+  margin-bottom: 20px;
+}
+//fin mixins
+//wrapper
+.wr{
+  padding:0 40px;
+}
 //header
 .navbar{
   padding: 0 !important;
@@ -57,36 +69,136 @@
 .firstconten{
   color: var(--VeryLightGray);
   text-align: center;
+  padding-bottom: 200px;
+  background-image:url("./components/images/bg-pattern-intro-right-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: bottom right;
   &_contentinfo{
     background-color: var(--DarkViolet);
     padding:60px 30px !important;
-    background-image: url("./components/images/bg-pattern-intro-left-mobile.svg"),url("./components/images/bg-pattern-intro-right-mobile.svg");
-    background-repeat: no-repeat,no-repeat;
-    background-position: top left,bottom right;
+    z-index: -1;
+    background-image: url("./components/images/bg-pattern-intro-left-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: top left;
     .title{
-      font-family: var(--fontHead);
-      font-weight: 700;
-      font-size: 2.8em;
-      margin-bottom: 20px;
+      @include title;
     }
     .text{
       font-family: var(--fontBody);
       font-size: 1em;
     }
-    .relleno{
-      height: 100px;
-      margin: 80px -20px -60px -20px;
-      background-color: white;
-    }
-    //nota : background-size: px px para firstcontent y quitar el div relleno del codigo y intentar lograr el resultado de el design  
   }
-
-  
-
-
 }
 .firtcontenbutn{
   width: 50%;
   max-width: 200px;
   border: 1px solid var(--VeryLightGray);
+  background-color: transparent;
+  color: var(--VeryLightGray);
 }
+//SECTION DIFERRENT
+.titled{
+  @include title;
+  text-align: center;
+  margin-bottom: 60px;
+}
+.mycard{
+  font-family: var(--fontHead);
+  text-align: center;
+  border: none !important;
+  margin-bottom: 30px;
+  .card_img{
+    margin: 10px auto;
+    width: 80px;
+    height: 80px;
+  }
+  .card_title{
+    font-weight: 700;
+    font-size: 1.8em;
+  }
+  .card_text{
+    font-family: var(--fontBody);
+    color: var(--DarkGrayishViolet);
+  }
+}
+//fin mycard
+
+//fintout
+.findout{
+  background-color: var(--DarkViolet);
+  color: var(--VeryLightGray);
+  background-image: url("./components/images/bg-pattern-how-we-work-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: top right;
+  margin: 100px 0;
+  .titlef{
+    @include title;
+    margin-top: 70px;
+    margin-bottom: 50px;
+    font-size: 2.3em;
+    text-align: center;
+  }
+  .container_butnf{
+    display: flex;
+    justify-content: center;
+    .firtcontenbutn{
+      padding: 10px;
+      width: 60%;
+      border: 2px solid var(--VeryLightGray);
+      margin-bottom: 70px;
+    }
+  }
+}
+//fin finout
+
+//footer
+.footer{
+  background-color: var(--VeryLightGray);
+  background-image: url("./components/images/bg-pattern-footer-mobile.svg");
+  background-repeat: no-repeat;
+  &_header{
+    margin-top: 100px;
+    text-align: center;
+    &_logo{
+      margin-top: 70px;
+      margin-bottom: 30px;
+    }
+    &_icons{
+      a{
+        margin: 15px;
+      }
+    }
+  }
+  hr{
+    margin: 30px 0;
+  }
+  &_body{
+    text-align: center;
+  }
+}
+.list{
+  &_h1{
+    @include title;
+    font-family: var(--fontBody);
+    color: var(--DarkGrayishViolet);
+    font-size: 1em;
+    margin: 40px 0;
+  }     
+  &_list{
+    padding-left: 0;
+    list-style: none;
+    &_li{
+      margin: 20px 0;
+      a{
+        color: var(--DarkViolet);
+        font-weight: 700;
+      }
+      a:hover{
+        text-decoration: none;
+        color: var(--DarkGrayishViolet);
+      }
+    }
+  }
+}
+
+//fin footer

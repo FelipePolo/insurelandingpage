@@ -4,8 +4,8 @@ import image from "./images/image-intro-mobile.jpg";
 
 export default function ContenIntro(){
   return(
-    <Row className = "row row-cols-1 firstconten"> 
-      <Col className = "Col-6">
+    <Row xs = {"1"} sm={"2"} className = "firstconten"> 
+      <Col>
         <img src={image} alt=""/>
       </Col>
       <Col className="firstconten_contentinfo">
@@ -14,9 +14,6 @@ export default function ContenIntro(){
         <button className = "butn firtcontenbutn">
           VIEW PLANS
         </button>
-        <div className ="relleno">
-
-        </div>
       </Col>
     </Row>
   );
