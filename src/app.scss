@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
 
+//bootstrap sass
+@import './sass/_functions.scss';
+@import './sass/_variables.scss';
+@import './sass/mixins/_breakpoints.scss';
+
 :root{
   //first variables
   --DarkViolet: hsl(256, 26%, 20%);
@@ -14,6 +19,7 @@
   --fontHead: 'DM Serif Display';
   --fontBody:'Karla';
   font-size: 16px;
+  --ismd:1;
 }
 //mixins
 @mixin title {
@@ -73,6 +79,13 @@
   background-image:url("./components/images/bg-pattern-intro-right-mobile.svg");
   background-repeat: no-repeat;
   background-position: bottom right;
+  .img_conten{
+    background-image: url("./components/images/image-intro-mobile.jpg");
+    background-repeat: no-repeat;
+    height: 451px;
+    width: 375px;
+  }
+
   &_contentinfo{
     background-color: var(--DarkViolet);
     padding:60px 30px !important;
@@ -202,3 +215,147 @@
 }
 
 //fin footer
+
+
+//RESPONSIVE FOR SM
+@include media-breakpoint-up(sm){
+  .collapse{
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    padding: 0;
+    justify-content: flex-end;
+    align-items: center;
+    .butn{
+      max-width: 150px;
+      margin: 0;
+      padding: 0 !important;
+      color: var(--VeryDarkViolet);
+    }
+    .butn:hover{
+      border-color:var(--VeryDarkViolet);
+    }
+    .butn:first-of-type{
+      margin-top: 0;
+    }
+    .butn:last-of-type{
+      margin-bottom: 0;
+    }
+  }
+  .firstconten{
+    .img_contenedor{
+      display: flex;
+      justify-content: right ;
+      padding-left: 70px;
+      background-color: var(--DarkViolet);
+      background-image: url("./components/images/bg-pattern-intro-right-desktop.svg");
+    }
+    .img_conten{
+      background-image: url("./components/images/image-intro-desktop.jpg");
+      background-size: 600px 500px;
+      width: 100%;
+      
+    }
+  }
+}
+
+@include media-breakpoint-up(md){
+  
+  .firstconten{
+    .img_contenedor{
+      padding-left: 0px;
+      background-color: var(--DarkViolet);
+      background-image: none;
+    }
+    .img_conten{
+      background-image: url("./components/images/image-intro-mobile.jpg");
+      background-size: 450px 500px;
+      width: 100%;
+      
+    }
+  }
+}
+
+@include media-breakpoint-up(lg){
+  .logo{
+    margin-left: 60px !important;
+  }
+  .firstconten{
+    background-image: url("./components/images/bg-pattern-intro-left-desktop.svg");
+    background-position: left bottom;
+    background-size: 200px 400px;
+    .img_contenedor{
+      display: flex;
+      background-color: var(--DarkViolet);
+      background-image: url("./components/images/bg-pattern-intro-right-desktop.svg");
+      background-repeat: no-repeat;
+      background-position: top right;
+      position: relative;
+      padding-top: 50px;
+    }
+    .img_conten{
+      background-image: url("./components/images/image-intro-desktop.jpg");
+      background-size:  500px 600px;
+      position: absolute;
+      width: 500px;
+      height: 600px;
+    }
+    &_contentinfo{
+      background-image: none;
+      .title{
+        margin-left: 60px;
+        width: 500px;
+        font-size: 4em;
+        margin-top: 60px;
+        text-align: left;
+      }
+      .text{
+        margin-left: 60px;
+        width: 550px;
+        text-align: left;
+      }
+    }
+  }
+  .titled{
+    text-align: left;
+    margin-left: 100px;
+  }
+
+  .findout{
+    .titlef{
+      text-align: left !important;
+      padding-left: 60px;
+    }
+    .container_butnf{
+      align-items: center;
+      justify-content: end;
+      .firtcontenbutn{
+        margin-bottom: 0px;
+        margin-right: 60px;
+      }
+    }
+  }
+  .footer_header{
+    &_logo{
+      margin: auto;
+      text-align: left;
+      .logo{
+        margin-left: 60px;
+      }
+    }
+    &_icons{
+      display: flex;
+      justify-content: right;
+      a:last-of-type{
+        margin-right: 60px;
+      }
+    }
+  }
+
+  .footer_body{
+    .list{
+      padding-left: 70px;
+      text-align: left;
+    }
+  }
+}
