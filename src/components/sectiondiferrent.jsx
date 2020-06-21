@@ -33,17 +33,15 @@ export default function SectionD() {
   return (
     <>
       <p className="titled">We're different</p>
-      <Row>
-        <Col>
-          {data_card.map((data) => (
-            <MyCard
-              img={data.img}
-              title={data.title}
-              text={data.text}
-              key={data.key}
-            />
-          ))}
-        </Col>
+      <Row lg="3" className="conten_card">
+        {data_card.map((data) => (
+          <MyCard
+            img={data.img}
+            title={data.title}
+            text={data.text}
+            key={data.key}
+          />
+        ))}
       </Row>
     </>
   );

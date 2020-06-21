@@ -5,18 +5,21 @@ import {
   CardTitle,
   CardText,
   CardImg,
+  Col,
 } from "reactstrap";
 
 export default function MyCard(props) {
   return (
-    <Card className= "mycard">
-      <CardImg src={props.img} className="card_img"></CardImg>
-      <CardBody>
-        <CardTitle className = "card_title">{props.title}</CardTitle>
-        <CardText className = "card_text">
-          {props.text}
-        </CardText>
-      </CardBody>
-    </Card>
+    <Col xs={"12"}>
+      <Card className= "mycard">
+        <CardImg src={props.img} className="card_img"></CardImg>
+        <CardBody>
+          <CardTitle className = "card_title">{props.title}</CardTitle>
+          <CardText className = "card_text">
+            {props.text}
+          </CardText>
+        </CardBody>
+      </Card>
+    </Col>
   );
 }

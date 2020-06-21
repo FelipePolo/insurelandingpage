@@ -29,7 +29,7 @@ const data_footer = [
 export default function Footer(){
   return(
     <div className="col-12 p-0 footer">
-      <Row className = "footer_header" xs ={"1"}>
+      <Row className = "footer_header" xs ={"1"} lg={"2"}>
         <Col className = "footer_header_logo">
           <a href = "#"><img src={logo} alt="logo" className="logo"/></a>
         </Col>
@@ -40,8 +40,8 @@ export default function Footer(){
           <a href = "#"><img src={instagram} alt=""/></a>
         </Col>
       </Row>
-      <div className = "wr"><hr className ="d-sm-none"></hr></div>
-      <Row className = "footer_body" xs = {"1"}>
+      <div className = "wr"><hr></hr></div>
+      <Row className = "footer_body" xs = {"1"} lg= {"4"}>
         {
           data_footer.map((data)=>(
             <ListF title = {data.title} elemen = {data.elemen}></ListF>

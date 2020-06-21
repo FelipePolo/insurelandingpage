@@ -3,7 +3,7 @@ import {Row,Col} from 'reactstrap';
 export default function Findout(){
   return(
     <div className ="wr">
-      <Row xs ={"1"} className="findout">
+      <Row xs ={"1"} className="findout" lg = {"2"}>
         <Col>
           <h1 className = "titlef">Find out more about how we work</h1>
         </Col>

@@ -18,7 +18,7 @@ export default function NavBarTop() {
   }
   return (
     <>
-      <Navbar expand="sm">
+      <Navbar expand="md">
         <NavbarBrand href="#">
           <img src={logo} alt="logo" className="logo"/>
         </NavbarBrand>
